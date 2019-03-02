@@ -1,33 +1,40 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+.row .col {
+  box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.row .col:first-child {
+  flex: 0 0 250px;
+  height: 80vh;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+}
+
+.row .col:first-child::-webkit-scrollbar{height:10px;}
+.row .col:first-child::-webkit-scrollbar-track{background:#dddddd;}
+.row .col:first-child::-webkit-scrollbar-thumb{background:#2cc2e4;}
+
+.row .col:last-child {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+}
+
+.prefectures {
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+}
+
+.prefectures li + li {
+  margin-top: 1em;
+}
+
+.prefectures li input {
+  margin-right: 0.5em;
 }
