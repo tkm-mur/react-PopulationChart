@@ -70,6 +70,8 @@ class App extends Component {
     const getIdList = []
     const data = []
     const _self = this
+    let count = 0
+
 
     _self.state.prefectures.forEach((val) => {
       if (val.isChecked) {getIdList.push(val)}
@@ -83,8 +85,9 @@ class App extends Component {
           _self.getChartData(val.prefCode)
             .then(res => {
               data.push(res)
+              count++
 
-              if (index + 1 === getIdList.length) {
+              if (count === getIdList.length) {
                 console.log('checkedData', data.length, data);
                 resolve(data)
               }
@@ -100,7 +103,7 @@ class App extends Component {
 
     // 年度のみformatedDataへ追加
     if (data.length === 0) {
-      return formatedData
+      return this.defultChartData
     } else {
       data[0].data.forEach((val) => {
         const obj = {}
@@ -111,7 +114,6 @@ class App extends Component {
 
     data.forEach((obj) => {
       const name = obj.idName
-
       obj.data.forEach((val) => {
         formatedData.forEach((formatedDataVal) => {
           if (formatedDataVal.year === val.year) {
@@ -153,6 +155,7 @@ class App extends Component {
   }
 
   render () {
+
     if (!this.state.prefectures) {
       return <div>読み込み中・・・</div>
     }
@@ -195,8 +198,6 @@ class App extends Component {
         </ResponsiveContainer>
       </div>
     )
-
-    console.log('render!!!!!!!!!!!!!')
 
     return (
       <div className="App">
