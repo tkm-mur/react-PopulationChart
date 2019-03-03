@@ -9,7 +9,7 @@
 /coverage
 
 # production
-/build
+/build`
 
 # misc
 .DS_Store
@@ -29,7 +29,8 @@ yarn-error.log*
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -127,4 +128,6 @@ typings/
 # Serverless directories
 .serverless
 
-
+.firebase/*
+.firebaserc
+firebase.json
