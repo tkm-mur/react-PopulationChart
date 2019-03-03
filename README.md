@@ -1,3 +1,7 @@
+# react-PopulationChart
+
+![caprure](https://user-images.githubusercontent.com/21156330/53689942-371ba400-3da4-11e9-917f-56b9bfe881ec.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,4 +70,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# react-PopulationChart
+
