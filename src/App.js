@@ -57,7 +57,6 @@ class App extends Component {
         .then(res => {
           res.body.result.data[0].id = prefectureId
           res.body.result.data[0].idName = _self.state.prefectures[prefectureId - 1].prefName
-          console.log('res', res.body.result.data[0]);
           resolve(res.body.result.data[0])
         }, err => {
           reject(err)
@@ -88,7 +87,6 @@ class App extends Component {
               count++
 
               if (count === getIdList.length) {
-                console.log('checkedData', data.length, data);
                 resolve(data)
               }
             })
@@ -157,7 +155,7 @@ class App extends Component {
   render () {
 
     if (!this.state.prefectures) {
-      return <div>読み込み中・・・</div>
+      return <div style={{textAlign: 'center', fontSize: '4rem', marginTop: '40vh'}}>読み込み中・・・</div>
     }
 
     const checkBoxs = this.state.prefectures.map(e => {
@@ -172,7 +170,7 @@ class App extends Component {
     })
 
     const lines = this.state.prefectures.map(e => {
-      return <Line type="monotone" key={e.prefName} dataKey={e.prefName} stroke="#82ca9d"/>
+      return <Line key={e.prefName} dataKey={e.prefName} stroke="#2cc2e4" />
     })
 
     const renderLineChart = (
@@ -202,7 +200,6 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
-
         <div className="row">
           <div className="col">
             <ul className="prefectures">

@@ -1,5 +1,10 @@
+.App {
+  padding: 20px 0;
+}
+
 .row {
   display: flex;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
 }
